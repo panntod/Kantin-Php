@@ -1,11 +1,10 @@
-<!-- ======= Footer ======= -->
-<footer id="footer py-3" class="footer">
-    <div class="container mt-4">
-    <div class="copyright">
-        &copy; Copyright <strong><span>Pandhu and Asfina</span></strong>.
+<footer id="footer" class="footer">
+    <div class="container py-3 text-center">
+        <div class="copyright">
+            &copy; Copyright <strong><span>Pandhu and Asfina</span></strong>.
+        </div>
     </div>
-</footer><!-- End Footer -->
-<!-- End Footer -->
+</footer>
 <?php include 'scripts.php'?>
 </body>
 </html>

@@ -19,7 +19,6 @@
         <h2>Warung
           <?= $dt_warung['nama_warung'] ?>
         </h2>
-        <p>Selamat datang silahkan pilih menu</p>
       </div>
 
       <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry"
@@ -89,4 +88,9 @@
 
     </div>
   </section><!-- End Portfolio Section -->
-  <?php include 'footer.php' ?>
+
+
+  <?php include 'scripts.php' ?>
+  </body>
+
+</html>

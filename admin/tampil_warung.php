@@ -34,7 +34,7 @@
                 <h2>
                     <?= $data_warung['nama_warung'] ?>
                 </h2>
-                <a href="#" class="btn btn-success tombol">Tambah</a>
+                <a href="#" class="btn btn-success tombol">Menu<i class="bi bi-file-plus-fill" style="font-size: 1.2rem "></i></a>
             </div>
 
             <table class="table table-hover table-striped border">

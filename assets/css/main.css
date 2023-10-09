@@ -7,7 +7,7 @@
 
 .tombol{
   border: 0;
-  padding: 14px 45px;
+  padding: 10px 30px;
   color: #fff;
   transition: 0.4s;
   border-radius: 50px;
@@ -82,13 +82,14 @@ section {
   font-size: 32px;
   font-weight: 600;
   position: relative;
+  padding-bottom: 10px;
 }
 
 .section-header h2:after {
   content: "";
   position: absolute;
   display: block;
-  width: 50px;
+  width: 70px;
   height: 3px;
   background: var(--color-primary);
   left: 0;
@@ -96,6 +97,7 @@ section {
   bottom: 0;
   margin: auto;
 }
+
 
 .section-header p {
   margin-bottom: 0;

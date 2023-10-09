@@ -1,10 +1,7 @@
 <footer id="footer" class="footer">
-    <div class="container py-3 mt-4">
+    <div class="container py-3 text-center">
         <div class="copyright">
             &copy; Copyright <strong><span>Pandhu and Asfina</span></strong>.
-        </div>
-        <div class="credits">
-            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
         </div>
     </div>
 </footer>
