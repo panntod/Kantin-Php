@@ -15,13 +15,11 @@
             border-radius: 10px;
             box-shadow: 0px 2px 25px rgba(0, 0, 0, 0.1);
         }
+        .mt-top{
+            margin-top: 3.5rem;
+        }
     </style>
-    <section class="container jarak">
-        <div>
-            <div class="section-header">
-                <h2>History Transaksi</h2>
-            </div>
-        </div>
+    <section class="container mt-top">
 
         <table class="table table-hover table-striped">
             <thead>

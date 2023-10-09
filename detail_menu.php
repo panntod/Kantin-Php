@@ -12,14 +12,18 @@
     ?>
 
     <style>
-        input, input[type="number"]:focus {
+        input,
+        input[type="number"]:focus {
             border: none;
             outline: none;
         }
+        .mt-top{
+            margin-top: 3.5rem;
+        }
     </style>
-    
+
     <!-- ======= About Us Section ======= -->
-    <section id="about" class="about jarak">
+    <section id="about" class="about mt-top">
         <div class="container" data-aos="fade-up">
 
             <div class="section-header">
@@ -32,8 +36,10 @@
                     <div class="row gy-4 align-items-center">
 
                         <div class="col-lg-6">
-                            <img src="<?= $dt_menu['gambar'] ?>" class="img-fluid rounded-2 mb-4" alt="" style="width: 500px; height: 500px;">
-                            <h4><a href="warung.php?id_warung=<?= $dt_menu['id_warung'] ?>" title="More Details"><i class="bi bi-arrow-left"></i> Kembali</a></h4>
+                            <img src="<?= $dt_menu['gambar'] ?>" class="img-fluid rounded-2 mb-4" alt=""
+                                style="width: 500px; height: 500px;">
+                            <h4><a href="warung.php?id_warung=<?= $dt_menu['id_warung'] ?>" title="More Details"><i
+                                        class="bi bi-arrow-left"></i> Kembali</a></h4>
                         </div>
 
                         <div class="col-lg-6">
@@ -61,8 +67,7 @@
                                 </div><!-- End Stats Item -->
 
                                 <div class="stats-item d-flex align-items-center">
-                                    <h4><strong>Jumlah: </strong><input type="number" name="qty" value="1"
-                                             min="1"></h4>
+                                    <h4><strong>Jumlah: </strong><input type="number" name="qty" value="1" min="1"></h4>
                                 </div><!-- End Stats Item -->
 
                                 <input class="btn btn-success tombol" type="submit" value="PESAN"

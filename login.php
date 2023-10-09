@@ -10,7 +10,7 @@
 
 <style>
 	.main-content {
-		width: 50%;
+		width: 100vh;
 		border-radius: 20px;
 		box-shadow: 0 5px 5px rgba(0, 0, 0, .4);
 		margin: 5em auto;

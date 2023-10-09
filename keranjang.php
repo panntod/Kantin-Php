@@ -25,9 +25,12 @@
         .checkout{
             background: var(--color-primary);
         }
+        .mt-top{
+            margin-top: 3.5rem;
+        }
     </style>
 
-    <section class="container jarak">
+    <section class="container mt-top">
         <div>
             <div class="section-header">
                 <h2>Keranjang <span style="color: var(--color-primary)">
