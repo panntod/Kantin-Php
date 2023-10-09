@@ -31,14 +31,6 @@
     </style>
 
     <section class="container mt-top">
-        <div>
-            <div class="section-header">
-                <h2>Keranjang <span style="color: var(--color-primary)">
-                        <?= $_SESSION['nama'] ?>
-                    </span></h2>
-            </div>
-        </div>
-
         <h5 class="tombol-a"><a href="home.php#services" title="More Details"><i class="bi bi-arrow-left"></i> Pesan
                 Lagi</a>
         </h5>

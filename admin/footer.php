@@ -1,5 +1,5 @@
 <footer id="footer" class="footer">
-    <div class="container mt-4">
+    <div class="container py-3 mt-4">
         <div class="copyright">
             &copy; Copyright <strong><span>Pandhu and Asfina</span></strong>.
         </div>
