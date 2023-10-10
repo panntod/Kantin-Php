@@ -15,7 +15,8 @@
             border-radius: 10px;
             box-shadow: 0px 2px 25px rgba(0, 0, 0, 0.1);
         }
-        .mt-top{
+
+        .mt-top {
             margin-top: 3.5rem;
         }
     </style>
@@ -29,7 +30,8 @@
                     <th>NAMA TOKO</th>
                     <th>JUMLAH</th>
                     <th>TOTAL</th>
-                    <th>TANGGAL PEMBAYARAN</th>
+                    <th>TANGGAL</th>
+                    <th>AKSI</th>
                 </tr>
             </thead>
             <tbody>
@@ -81,6 +83,11 @@
                         <td>
                             <?= $dt_histori['tanggal_pembayaran'] ?>
                         </td>
+                        <td>
+                            <a href="hapus_transaksi.php?id_pembayaran=<?= $dt_histori['id_pembayaran'] ?>"
+                                onclick="return confirm('Apakah anda yakin menghapus data ini?')" class="btn btn-danger"><i
+                                    class="bi bi-trash"></i></a>
+                        </td>
                     </tr>
                     <?php
                 }
@@ -89,5 +96,6 @@
         </table>
     </section>
     <?php include 'scripts.php' ?>
-</body>
+    </body>
+
 </html>

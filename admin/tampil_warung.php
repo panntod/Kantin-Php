@@ -31,7 +31,7 @@
         while ($data_warung = mysqli_fetch_array($qry_warung)) {
             ?>
             <div class="section-warung mt-5 mb-3">
-                <h2>
+                <h2 style="font-weight: 700;">
                     <?= $data_warung['nama_warung'] ?>
                 </h2>
                 <div class="button-container">
