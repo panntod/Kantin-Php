@@ -35,10 +35,11 @@
                     <?= $data_warung['nama_warung'] ?>
                 </h2>
                 <div class="button-container">
+                    <a href="#" class="btn btn-success">Tambah Menu</a>
+                    <a href="ubah_warung.php?id_warung=<?= $data_warung['id_warung'] ?>" class="btn btn-warning text-white">Ubah</a>
                     <a href="hapus_warung.php?id_warung=<?= $data_warung['id_warung'] ?>"
                         onclick="return confirm('Apakah anda yakin menghapus data ini?')" class="btn btn-danger">Hapus
                         Warung</a>
-                    <a href="#" class="btn btn-success">Tambah Menu</a>
                 </div>
             </div>
 
