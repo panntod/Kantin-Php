@@ -92,7 +92,7 @@
                 </tbody>
             </table>
         <?php } ?>
-        <a href="#" class="btn btn-primary tombol">TAMBAH WARUNG</a>
+        <a href="tambah_warung.php" class="btn btn-primary tombol">TAMBAH WARUNG</a>
 
         <?php include 'link.scripts.php' ?>
     </section>
