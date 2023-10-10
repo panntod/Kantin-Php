@@ -34,7 +34,12 @@
                 <h2>
                     <?= $data_warung['nama_warung'] ?>
                 </h2>
-                <a href="#" class="btn btn-success tombol">Menu<i class="bi bi-file-plus-fill" style="font-size: 1.2rem "></i></a>
+                <div class="button-container">
+                    <a href="hapus_warung.php?id_warung=<?= $data_warung['id_warung'] ?>"
+                        onclick="return confirm('Apakah anda yakin menghapus data ini?')" class="btn btn-danger">Hapus
+                        Warung</a>
+                    <a href="#" class="btn btn-success">Tambah Menu</a>
+                </div>
             </div>
 
             <table class="table table-hover table-striped border">
