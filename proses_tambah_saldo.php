@@ -21,9 +21,12 @@ if ($_POST) {
             $_SESSION['saldo_siswa'] = $row_saldo['saldo_siswa'];
 
             echo "<script>alert('Sukses menambahkan saldo');location.href='home.php';</script>";
-        } else {
-            echo "<script>alert('Gagal menambahkan saldo');location.href='tambah_saldo.php';</script>";
+        }else if (!$insert) {
+            echo "<script>alert('Gagal menambahkan saldo: " . mysqli_error($conn) . "');location.href='tambah_saldo.php';</script>";
+        }else {
+            echo "<script>alert('Gagal menambahkan saldo');location.href='home.php';</script>"; 
         }
+        
     }
 }
 ?>

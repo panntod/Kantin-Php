@@ -143,5 +143,6 @@
         </div>
     </section>
     <?php include 'scripts.php' ?>
-</body>
+    </body>
+
 </html>
