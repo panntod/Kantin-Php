@@ -28,7 +28,7 @@
                 <div class="col-lg-4">
                     <div class="info-container d-flex flex-column align-items-center justify-content-center">
                         <img id="gambar-img" src="<?= $dt_menu['gambar'] ?>" class="img-fluid shadow-lg"
-                            style="width: 300px; height: 400px; border-radius:2rem; background: center/cover no-repeat;"
+                            style="width: 300px; height: auto; border-radius:2rem; background: center/cover no-repeat;"
                             alt="data-bg" data-aos="zoom-out" data-aos-delay="100">
                     </div>
                 </div>
@@ -76,7 +76,7 @@
                             <div class="sent-message">Your regristate is succesfully. Thank you!</div>
                         </div>
                         <div class="text-center">
-                            <button type="submit" onclick="validateAndPindah()">Tambah</button>
+                            <button type="submit" onclick="validateAndPindah()">Ubah</button>
                         </div>
                     </form>
                 </div><!-- End Contact Form -->

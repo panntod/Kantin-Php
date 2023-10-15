@@ -22,7 +22,7 @@
                 <div class="col-lg-4">
                     <div class="info-container d-flex flex-column align-items-center justify-content-center">
                         <img id="gambar-img" src="../assets/img/bg-foto-3x4.png" class="img-fluid shadow-lg"
-                            style="width: 300px; height: 400px; border-radius:2rem; background: center/cover no-repeat;"
+                            style="width: 300px; height: auto; border-radius:2rem; background: center/cover no-repeat;"
                             alt="data-bg" data-aos="zoom-out" data-aos-delay="100">
                     </div>
                 </div>
