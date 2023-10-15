@@ -21,14 +21,15 @@
 
                 <div class="col-lg-4">
                     <div class="info-container d-flex flex-column align-items-center justify-content-center">
-                        <img src="" class="img-fluid" style="width: 300px; height: auto" alt="data-bg"
-                            data-aos="zoom-out" data-aos-delay="100">
+                        <img id="gambar-img" src="../assets/img/bg-foto-3x4.png" class="img-fluid shadow-lg"
+                            style="width: 300px; height: 400px; border-radius:2rem; background: center/cover no-repeat;"
+                            alt="data-bg" data-aos="zoom-out" data-aos-delay="100">
                     </div>
                 </div>
 
                 <div class="col-lg-8">
                     <form action="proses_tambah_menu.php" method="post" class="php-email-form">
-                        <input type="text" name="id_warung" value="<?= $_GET['id_warung'] ?>">
+                        <input type="hidden" name="id_warung" value="<?= $_GET['id_warung'] ?>">
 
                         <div class="form-group mt-3">
                             <input type="text" name="nama_menu" class="form-control"
@@ -39,19 +40,23 @@
                                 style="height: 50px; border-radius: 10px;" placeholder="Masukan deskripsi" required>
                         </div>
 
-                        <div class="form-group mt-3">
-                            <input type="text" class="form-control" name="gambar" id="gambar"
+                        <div class="form-group mt-3 d-flex">
+                            <input type="text" class="form-control me-3" name="gambar" id="gambar"
                                 style="height: 50px; border-radius: 10px;" placeholder="Masukan Url Gambar" required>
+                            <button type="button" class="btn btn-success px-3" id="cekButton">Cek</button>
                         </div>
 
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="jenis" id="makanan" value="makanan">
-                            <label class="form-check-label" for="makanan">Makanan</label>
-                        </div>
 
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="jenis" id="minuman" value="minuman">
-                            <label class="form-check-label" for="minuman">Minuman</label>
+                        <div class="d-flex justify-content-center">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="jenis" id="makanan" value="makanan">
+                                <label class="form-check-label" for="makanan">Makanan</label>
+                            </div>
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="jenis" id="minuman" value="minuman">
+                                <label class="form-check-label" for="minuman">Minuman</label>
+                            </div>
                         </div>
 
                         <div class="form-group mt-3">
@@ -78,22 +83,22 @@
 
     <script>
         function validateAndPindah() {
-            var nama = document.getElementsByName("nama")[0].value;
-            var kelas = document.getElementsByName("kelas")[0].value;
-            var email = document.getElementById("email").value;
-            var password = document.getElementById("password").value;
-
-            if (nama === "" || kelas === "" || email === "") {
-                var errorMessage = document.querySelector(".error-message");
-                errorMessage.textContent = "Please fill in all fields.";
-                errorMessage.style.backgroundColor = "red";
-                errorMessage.style.borderRadius = "11px";
-                errorMessage.style.display = "block";
-            } else {
-                Semua field terisi, pindah ke halaman berikutnya
-                window.location.href = "tampil_warung.php";
-            }
+            window.location.href = "tampil_warung.php";
         }
+    </script>
+    <script>
+        const gambarInput = document.getElementById("gambar");
+        const gambarImg = document.getElementById("gambar-img");
+        const cekButton = document.getElementById("cekButton");
+
+        cekButton.addEventListener("click", function () {
+            const newImageUrl = gambarInput.value;
+            if (newImageUrl) {
+                gambarImg.src = newImageUrl;
+            } else {
+                alert("Masukkan URL gambar terlebih dahulu.");
+            }
+        });
     </script>
     <?php include "link.scripts.php"; ?>
 </body>

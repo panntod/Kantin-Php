@@ -5,10 +5,9 @@
     <title>Tampil Siswa</title>
     <?php include 'navbar.php' ?>
 
-    <section class="container">
+    <section class="container-fluid p-lg-5">
 
-        <table class="table table-hover table-striped"
-            style="height: 100%; padding: 20px; border-radius: 10px;box-shadow: 0px 2px 25px rgba(0, 0, 0, 0.1);">
+        <table class="w-100 table table-hover table-striped p-5 rounded shadow">
             <thead>
                 <tr>
                     <th>ID</th>

@@ -17,7 +17,7 @@
                     <p>dipusat kontrol dari database siswa dan warung.</p>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2">
-                    <img src="../assets/img/hero-bg.svg" class="img-fluid" alt="" data-aos="zoom-out"
+                    <img src="../assets/img/hero-bg.svg" class="img-fluid" alt="gambar kantin" data-aos="zoom-out"
                         data-aos-delay="100">
                 </div>
             </div>
@@ -26,17 +26,15 @@
     <!-- End Hero Section -->
 
     <!-- ======= Our Services Section ======= -->
-    <section id="services" class="services sections-bg">
+    <section id="services" class="services sections-bg" >
         <div class="container" data-aos="fade-up">
-
             <div class="section-header">
                 <h2>Kontrol Panel</h2>
             </div>
 
             <div class="row gy-4" data-aos="fade-up" data-aos-delay="100">
-
                 <!-- Section Card -->
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-12 col-sm-12">
                     <div class="service-item position-relative">
                         <div class="icon">
                             <i class="bi bi-database-gear"></i>
@@ -53,7 +51,7 @@
                 </div>
 
                 <!-- Section Card -->
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-12 col-sm-6">
                     <div class="service-item position-relative">
                         <div class="icon">
                             <i class="bi bi-database-gear"></i>
@@ -64,7 +62,8 @@
                         <p>
                             Digunakan untuk mengkontrol data Warung
                         </p>
-                        <a href="tampil_warung.php" class="readmore stretched-link">Check<i class="bi bi-arrow-right"></i></a>
+                        <a href="tampil_warung.php" class="readmore stretched-link">Check<i
+                                class="bi bi-arrow-right"></i></a>
                     </div>
                 </div>
             </div>

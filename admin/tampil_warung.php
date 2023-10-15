@@ -23,7 +23,7 @@
         }
     </style>
 
-    <section class="container">
+    <section class="container-fluid p-lg-5">
         <?php
         include "server.php";
         $qry_warung = mysqli_query($conn, "SELECT * FROM warung");
@@ -35,8 +35,10 @@
                     <?= $data_warung['nama_warung'] ?>
                 </h2>
                 <div class="button-container">
-                    <a href="tambah_menu.php?id_warung=<?= $data_warung['id_warung'] ?>" class="btn btn-success">Tambah Menu</a>
-                    <a href="ubah_warung.php?id_warung=<?= $data_warung['id_warung'] ?>" class="btn btn-warning text-white">Ubah</a>
+                    <a href="tambah_menu.php?id_warung=<?= $data_warung['id_warung'] ?>" class="btn btn-success">Tambah
+                        Menu</a>
+                    <a href="ubah_warung.php?id_warung=<?= $data_warung['id_warung'] ?>"
+                        class="btn btn-warning text-white">Ubah</a>
                     <a href="hapus_warung.php?id_warung=<?= $data_warung['id_warung'] ?>"
                         onclick="return confirm('Apakah anda yakin menghapus data ini?')" class="btn btn-danger">Hapus
                         Warung</a>
@@ -83,8 +85,9 @@
                             </td>
                             <td>
                                 <a href="#" class="btn btn-warning text-white"><i class="bi bi-pencil-square"></i></a>
-                                <a href="#" onclick="return confirm('Apakah anda yakin menghapus data ini?')"
-                                    class="btn btn-danger"><i class="bi bi-trash"></i></a>
+                                <a href="hapus_menu.php?id_menu=<?= $data_menu['id_menu'] ?>"
+                                    onclick="return confirm('Apakah anda yakin menghapus data ini?')" class="btn btn-danger"><i
+                                        class="bi bi-trash"></i></a>
                             </td>
                         </tr>
                         <?php
