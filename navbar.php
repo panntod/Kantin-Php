@@ -20,15 +20,15 @@ include 'style.php';
       </a>
       <nav id="navbar" class="navbar">
         <ul>
-          <li>
-            <b style="color: #fff">Saldo:
+          <li class="saldo">
+            <b>Saldo:
               <?= $_SESSION['saldo_siswa']; ?>
             </b>
           </li>
           <li><a href="home.php">Home</a></li>
           <li><a href="keranjang.php">Keranjang <i class="bi bi-basket"></i></a></li>
           <li><a href="transaksi.php">Transaksi <i class="bi bi-cart"></i></a></li>
-          <li class="dropdown"><a href="#"><span>Drop Down</span> <i
+          <li class="dropdown"><a href="#"><span>Profil</span> <i
                 class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
             <?php

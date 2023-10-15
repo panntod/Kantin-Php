@@ -6,6 +6,15 @@
   --font-secondary: "Poppins", sans-serif;
 }
 
+b{
+  color: #fff;
+}
+
+.saldo{
+  display: flex;
+  justify-content: center;
+}
+
 .tombol {
   border: 0;
   padding: 10px 30px;
