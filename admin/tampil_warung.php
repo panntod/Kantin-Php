@@ -84,7 +84,7 @@
                                 <?= $data_menu['harga'] ?>
                             </td>
                             <td>
-                                <a href="#" class="btn btn-warning text-white"><i class="bi bi-pencil-square"></i></a>
+                                <a href="ubah_menu.php?id_menu=<?= $data_menu['id_menu'] ?>" class="btn btn-warning text-white"><i class="bi bi-pencil-square"></i></a>
                                 <a href="hapus_menu.php?id_menu=<?= $data_menu['id_menu'] ?>"
                                     onclick="return confirm('Apakah anda yakin menghapus data ini?')" class="btn btn-danger"><i
                                         class="bi bi-trash"></i></a>
