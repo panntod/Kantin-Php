@@ -1,4 +1,9 @@
 <?php
+function isValidImageUrl($url) {
+    $imageData = @getimagesize($url);
+    return $imageData !== false;
+}
+
 if ($_POST) {
     $nama_menu = $_POST['nama_menu'];
     $deskripsi_menu = $_POST['deskripsi_menu'];
@@ -7,16 +12,30 @@ if ($_POST) {
     $harga = $_POST['harga'];
     $id_warung = $_POST['id_warung'];
 
+    $errorMessage = '';
+
     if (empty($nama_menu)) {
-        echo "<script>alert('nama siswa tidak boleh kosong');location.href='ubah_siswa.php';</script>";
-    } else {
+        $errorMessage = 'Nama menu tidak boleh kosong';
+    }
+
+    if (isValidImageUrl($gambar)) {
         include "server.php";
-        $insert = mysqli_query($conn, "INSERT INTO `menu` (`id_menu`, `nama_menu`, `deskripsi_menu`, `gambar`, `jenis`, `id_warung`, `harga`) VALUES (NULL, '$nama_menu', '$deskripsi_menu', '$gambar', '$jenis', $id_warung, $harga);");
+        $query = "INSERT INTO `menu` (`id_menu`, `nama_menu`, `deskripsi_menu`, `gambar`, `jenis`, `id_warung`, `harga`) VALUES (NULL, '$nama_menu', '$deskripsi_menu', '$gambar', '$jenis', $id_warung, $harga)";
+
+        $insert = mysqli_query($conn, $query);
+
         if ($insert) {
             echo "<script>alert('Sukses insert Menu');location.href='ubah_siswa.php';</script>";
+            exit();
         } else {
-            echo "<script>alert('Gagal insert Menu');location.href='ubah_siswa.php?id_menu=" . $id_menu . "';</script>";
+            $errorMessage = 'Gagal insert Menu: ' . mysqli_error($conn);
         }
+    } else {
+        $errorMessage = 'URL gambar tidak valid';
+    }
+
+    if (!empty($errorMessage)) {
+        echo "<script>alert('$errorMessage');location.href='tambah_menu.php';</script>";
     }
 }
 ?>

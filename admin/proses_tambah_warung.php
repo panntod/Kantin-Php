@@ -1,20 +1,32 @@
 <?php
-if($_POST){
+if ($_POST) {
     $nama_warung = $_POST['nama'];
     $deskripsi = $_POST['deskripsi'];
 
-    if(empty($nama_warung)){
-        echo "<script>alert('Nama warung tidak boleh kosong');location.href='tambah_warung.php';</script>";
-    } else if(empty($deskripsi)){
-        echo "<script>alert('Deskripsi tidak boleh kosong');location.href='tambah_warung.php';</script>";
-    } else {
+    $errorMessage = '';
+
+    if (empty($nama_warung)) {
+        $errorMessage = 'Nama warung tidak boleh kosong';
+    } elseif (empty($deskripsi)) {
+        $errorMessage = 'Deskripsi tidak boleh kosong';
+    }
+
+    if (empty($errorMessage)) {
         include "server.php";
-        $insert = mysqli_query($conn, "INSERT INTO warung (`id_warung`, `nama_warung`, `deskripsi`) VALUES (NULL, '$nama_warung', '$deskripsi')") or die(mysqli_error($conn));
+        $query = "INSERT INTO warung (`id_warung`, `nama_warung`, `deskripsi`) VALUES (NULL, '$nama_warung', '$deskripsi')";
+
+        $insert = mysqli_query($conn, $query);
+
         if ($insert) {
             echo "<script>alert('Sukses menambahkan warung');</script>";
+            exit();
         } else {
-            echo "<script>alert('Gagal menambahkan warung');</script>";
+            $errorMessage = 'Gagal menambahkan warung: ' . mysqli_error($conn);
         }
-    } 
+    }
+
+    if (!empty($errorMessage)) {
+        echo "<script>alert('$errorMessage');location.href='tambah_warung.php';</script>";
+    }
 }
 ?>
