@@ -1,42 +1,61 @@
 <?php
+function loginUser($email, $password) {
+    include "server.php";
+    $qry_login = mysqli_query($conn, "SELECT * FROM siswa WHERE email = '$email' AND password = '" . md5($password) . "'");
+
+    if (mysqli_num_rows($qry_login) > 0) {
+        $dt_login = mysqli_fetch_array($qry_login);
+        return $dt_login;
+    }
+    return null;
+}
+
+function startSession($userData, $role) {
+    session_start();
+    $_SESSION['id_siswa'] = $userData['id_siswa'];
+    $_SESSION['saldo_siswa'] = $userData['saldo_siswa'];
+    $_SESSION['nama'] = $userData['nama'];
+    $_SESSION['kelas'] = $userData['kelas'];
+    $_SESSION['role'] = $role;
+    $_SESSION['status_login'] = true;
+}
+
 if ($_POST) {
     $email = $_POST['email'];
     $password = $_POST['password'];
+
+    $errorMessages = [];
+
     if (empty($email)) {
-        echo "<script>alert('Email tidak boleh kosong');location.href='login.php';</script>";
-    } elseif (empty($password)) {
-        echo "<script>alert('Password tidak boleh kosong');location.href='login.php';</script>";
-    } else {
-        include "server.php";
-        $qry_login = mysqli_query($conn, "select * from siswa where email = '" . $email . "' and password = '" . md5($password) . "'");
+        $errorMessages[] = "Email tidak boleh kosong";
+    }
+    if (empty($password)) {
+        $errorMessages[] = "Password tidak boleh kosong";
+    }
 
-        if (mysqli_num_rows($qry_login) > 0) {
-            $dt_login = mysqli_fetch_array($qry_login);
-
-            if ($dt_login['role'] == 'admin') {
-                session_start();
-                $_SESSION['id_siswa'] = $dt_login['id_siswa'];
-                $_SESSION['saldo_siswa'] = $dt_login['saldo_siswa'];
-                $_SESSION['nama'] = $dt_login['nama'];
-                $_SESSION['kelas'] = $dt_login['kelas'];
-                $_SESSION['role'] = 'admin';
-                $_SESSION['status_login'] = true;
+    if (empty($errorMessages)) {
+        $userData = loginUser($email, $password);
+        if ($userData) {
+            if ($userData['role'] == 'admin') {
+                startSession($userData, 'admin');
                 header("location: admin/home.php");
-            } else if ($dt_login['role'] == 'siswa') {
-                session_start();
-                $_SESSION['id_siswa'] = $dt_login['id_siswa'];
-                $_SESSION['saldo_siswa'] = $dt_login['saldo_siswa'];
-                $_SESSION['nama'] = $dt_login['nama'];
-                $_SESSION['kelas'] = $dt_login['kelas'];
-                $_SESSION['role'] = 'siswa';
-                $_SESSION['status_login'] = true;
+            } elseif ($userData['role'] == 'siswa') {
+                startSession($userData, 'siswa');
                 header("location: home.php");
             } else {
-                echo "<script>alert('Role tidak valid');location.href='login.php';</script>";
+                $errorMessages[] = "Role tidak valid";
             }
         } else {
-            echo "<script>alert('Email dan Password tidak benar');location.href='login.php';</script>";
+            $errorMessages[] = "Email dan Password tidak benar";
         }
+    }
+
+    if (!empty($errorMessages)) {
+        // Tampilkan pesan kesalahan
+        foreach ($errorMessages as $errorMessage) {
+            echo "<script>alert('$errorMessage');</script>";
+        }
+        header("location: login.php");
     }
 }
 ?>

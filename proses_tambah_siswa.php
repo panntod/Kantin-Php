@@ -5,22 +5,32 @@ if ($_POST) {
     $email = $_POST['email'];
     $password = md5($_POST['password']); // Enkripsi password dengan md5()
 
+    $errorMessage = '';
+
     if (empty($nama_siswa)) {
-        echo "<script>alert('nama siswa tidak boleh kosong');location.href='tambah_siswa.php';</script>";
+        $errorMessage = 'Nama siswa tidak boleh kosong';
     } elseif (empty($kelas)) {
-        echo "<script>alert('kelas tidak boleh kosong');location.href='tambah_siswa.php';</script>";
+        $errorMessage = 'Kelas tidak boleh kosong';
     } elseif (empty($email)) {
-        echo "<script>alert('email tidak boleh kosong');location.href='tambah_siswa.php';</script>";
+        $errorMessage = 'Email tidak boleh kosong';
     } elseif (empty($password)) {
-        echo "<script>alert('password tidak boleh kosong');location.href='tambah_siswa.php';</script>";
-    } else {
+        $errorMessage = 'Password tidak boleh kosong';
+    }
+
+    if (empty($errorMessage)) {
         include "server.php";
-        $insert = mysqli_query($conn, "INSERT INTO siswa (nama, kelas, email, password) VALUES ('$nama_siswa', '$kelas', '$email', '$password')") or die(mysqli_error($conn));
+        $insert = mysqli_query($conn, "INSERT INTO siswa (nama, kelas, email, password) VALUES ('$nama_siswa', '$kelas', '$email', '$password')");
+
         if ($insert) {
-            echo "<script>alert('Sukses menambahkan siswa');location.href='login.php';</script>";
+            header('Location: login.php');
+            exit();
         } else {
-            echo "<script>alert('Gagal menambahkan siswa');location.href='login.php';</script>";
+            $errorMessage = 'Gagal menambahkan siswa';
         }
+    }
+
+    if (!empty($errorMessage)) {
+        echo "<script>alert('$errorMessage');location.href='tambah_siswa.php';</script>";
     }
 }
 ?>

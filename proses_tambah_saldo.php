@@ -1,15 +1,17 @@
 <?php
 session_start(); 
+
 if ($_POST) {
     $id_siswa = $_SESSION['id_siswa'];
     $saldo = $_POST['saldo'];
+    
     if (empty($saldo)) {
-        echo "<script>alert('saldo tidak boleh kosong');location.href='tambah_saldo.php';</script>";
+        $errorMessage = "Saldo tidak boleh kosong";
     } else {
         include "server.php"; 
         $query = "UPDATE siswa SET saldo_siswa = saldo_siswa + $saldo WHERE id_siswa = $id_siswa";
 
-        $insert = mysqli_query($conn, $query) or die(mysqli_error($conn));
+        $insert = mysqli_query($conn, $query);
 
         if ($insert) {
             // Mengambil data saldo terbaru setelah diperbarui
@@ -20,14 +22,15 @@ if ($_POST) {
             // Mengatur ulang session saldo_siswa dengan nilai terbaru
             $_SESSION['saldo_siswa'] = $row_saldo['saldo_siswa'];
 
-            echo "<script>alert('Sukses menambahkan saldo');location.href='home.php';</script>";
-        }else if (!$insert) {
-            echo "<script>alert('Gagal menambahkan saldo: " . mysqli_error($conn) . "');location.href='tambah_saldo.php';</script>";
-        }else {
-            echo "<script>alert('Gagal menambahkan saldo');location.href='home.php';</script>"; 
+            header('Location: home.php');
+            exit();
+        } else {
+            $errorMessage = "Gagal menambahkan saldo: " . mysqli_error($conn);
         }
-        
+    }
+    
+    if (isset($errorMessage)) {
+        echo "<script>alert('$errorMessage');location.href='tambah_saldo.php';</script>";
     }
 }
 ?>
-
