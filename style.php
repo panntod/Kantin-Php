@@ -15,7 +15,7 @@
         <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
         <!-- Template Main CSS File -->
-        <link href="assets/css/main.css" rel="stylesheet">
+        <link href="assets/css/index.css" rel="stylesheet">
 
 
    
