@@ -1070,9 +1070,8 @@ section.services {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 100%;
-    max-width: 400px;
     bottom: 0;
+    width: 100%;
     transition: 0.3s;
     z-index: 9997;
   }
@@ -1095,7 +1094,7 @@ section.services {
     justify-content: space-between;
     padding: 10px 20px;
     font-family: var(--font-primary);
-    font-size: 15px;
+    font-size: 20px;
     font-weight: 600;
     color: rgba(255, 255, 255, 0.7);
     white-space: nowrap;
@@ -1104,7 +1103,7 @@ section.services {
 
   .navbar a i,
   .navbar a:focus i {
-    font-size: 12px;
+    font-size: 16px;
     line-height: 0;
     margin-left: 5px;
   }
@@ -1219,7 +1218,7 @@ section.services {
     justify-content: space-between;
     padding: 0 3px;
     font-family: var(--font-secondary);
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 600;
     color: rgba(255, 255, 255, 0.6);
     white-space: nowrap;
@@ -1237,7 +1236,7 @@ section.services {
   .navbar > ul > li > a:before {
     content: "";
     position: absolute;
-    width: 100%;
+    min-width: 100%;
     height: 2px;
     bottom: -6px;
     left: 0;
